@@ -36,3 +36,36 @@ def _get_absolute_file_path():
     """
     # FIXME: get the absolute file path; currently hardcoded
     return "./Resources"
+
+def count_chars_in_line(line):
+    """
+    counts the characters and tabs in the given line
+
+    Args:
+        line: the current line being parsed (as string)
+
+    Return:
+        dictionary:
+            tabs: number of tabs at the beginning of the line
+            length: line length
+    """
+
+    line_length = len(line)
+
+    # ignore the last newline character
+    if line[line_length - 1] == '\n':
+        line_length = line_length - 1
+
+    # count number of tabs
+    tabs = 0
+    index = 0
+    while line[index] == '\t':
+        index = index + 1
+        tabs = tabs + 1
+
+    response = {
+        "tabs": tabs,
+        "length": line_length
+    }
+
+    return response

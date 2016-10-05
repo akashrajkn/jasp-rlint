@@ -27,17 +27,7 @@ def main(filename):
     """
     complete_filepath = get_file_path(filename)
 
-    # open file in read mode
-    file_object = open(complete_filepath, 'r')
-
-    # check if file open is successful
-    if file_object is None:
-        print("file open failed")
-
-    # read the entire file
-    file_content = file_object.read()
-
-    parsed_file = parse_source_file(file_content)
+    parsed_file = parse_source_file(complete_filepath)
     errors = parsed_file["errors"]
     warnings = parsed_file["warnings"]
 
