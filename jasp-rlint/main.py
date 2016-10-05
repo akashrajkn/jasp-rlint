@@ -15,9 +15,15 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+from utils import get_file_path
+from parser import parse_source_file
+
 def main(filename):
     """
-    main function - entry to the parser/linter
+    Main function - entry to the parser/linter
+
+    Args:
+        filename: R file to be checked in jasp-rlint
     """
     complete_filepath = get_file_path(filename)
 
@@ -42,10 +48,12 @@ def main(filename):
 
     # print the errors if present
     if len(errors) < 1:
-        print "no errors in file"
+        print("no errors in file")
     else:
         for error in errors:
             print(error)
 
 if __name__ == '__main__':
+
+    # FIXME: currently hardcoded; get the filename from commandline
     main('alpha.R')
