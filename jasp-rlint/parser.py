@@ -43,11 +43,9 @@ def parse_source_file(filepath):
     if file_object is None:
         print("file open failed")
 
-    # read the entire file
-    file_content = file_object.readlines()
-
+    # loop over the file object, read file line by line
     line_number = 0
-    for line in file_content:
+    for line in file_object:
         line_number = line_number + 1
         char_count = count_chars_in_line(line)
         line_length = char_count["length"]
@@ -58,6 +56,8 @@ def parse_source_file(filepath):
                         )
 
         number_of_tabs = char_count["tabs"]
+
+
 
     # response object
     response = {

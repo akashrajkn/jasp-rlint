@@ -35,7 +35,7 @@ def _get_absolute_file_path():
 
     """
     # FIXME: get the absolute file path; currently hardcoded
-    return "./Resources"
+    return ".."
 
 def count_chars_in_line(line):
     """
